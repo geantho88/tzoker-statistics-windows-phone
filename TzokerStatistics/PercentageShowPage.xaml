@@ -1,0 +1,61 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="TzokerStatistics.PercentageShowPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28"/>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.RowSpan="2" Background="#FF1C4968">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45*"/>
+                <RowDefinition Height="211*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left" Margin="12,0,0,0" TextWrapping="Wrap" Text="Συχνότητα Εμφάνισης" VerticalAlignment="Top" Height="55" Width="460" FontSize="40" FontFamily="Comic Sans MS" TextAlignment="Center" Foreground="#FFF6E705"/>
+            <ListBox Height="575" HorizontalAlignment="Left" x:Name="PercentageShowList" VerticalAlignment="Top" Width="460" ItemsSource="{Binding}" Opacity="1" Background="{x:Null}" Margin="12,111,0,0" BorderBrush="#00000000" Grid.RowSpan="2" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Black" BorderThickness="0,0,0,0"  Width="600" Padding="0">
+                            <StackPanel Orientation="Horizontal" Margin="0" Width="600">
+                                <Button Foreground="Black" Height="100" HorizontalAlignment="Left" Content="{Binding number}" Margin="0,0,0,0" x:Name="KinoNumber" BorderThickness="0,0,0,0" VerticalAlignment="Center" Width="95">
+                                    <Button.Background>
+                                        <ImageBrush ImageSource="/TzokerStatistics;component/Resources/Images/tzokerball.png" Stretch="Fill" />
+                                    </Button.Background>
+                                </Button>
+                                <ProgressBar Width="250" Value="{Binding percentageshow}" Foreground="Green" Height="28" VerticalAlignment="Center" BorderThickness="0,0,0,0" RenderTransformOrigin="0.5,0.5" Background="White">
+                                    <ProgressBar.RenderTransform>
+                                        <CompositeTransform ScaleY="-2"/>
+                                    </ProgressBar.RenderTransform>
+                                </ProgressBar>
+                                <!--<TextBlock Text="Ποσοστό εμφάνισης"   HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" TextWrapping="Wrap" FontSize="22" FontStyle="Italic"/>-->
+                                <TextBlock Text="{Binding percentageshow}"   HorizontalAlignment="Right" VerticalAlignment="Center" Margin="25,0,0,0" Foreground="White" TextWrapping="Wrap" FontSize="30" FontStyle="Italic"/>
+                                <TextBlock Text="%"   HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="White" TextWrapping="Wrap" FontSize="22" FontStyle="Italic"/>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <TextBlock x:Name="DrawsLabel" HorizontalAlignment="Left" Margin="16,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="42" Width="444" FontSize="18" FontFamily="Arial Unicode MS" TextAlignment="Center" RenderTransformOrigin="0.506,0.666" FontStyle="Italic"/>
+            <Grid HorizontalAlignment="Left" Height="67" VerticalAlignment="Bottom" Width="480" x:Name="AdPanel" Grid.Row="1"/>
+
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

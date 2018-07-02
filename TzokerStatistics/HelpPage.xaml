@@ -1,0 +1,56 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="TzokerStatistics.HelpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Pivot Control-->
+        <phone:Pivot Title="Βοήθεια" Background="#FF1C4968">
+            <!--Pivot item one-->
+            <phone:PivotItem Header="Το παιχνίδι">
+                <Grid>
+                    <Image Margin="10,10,0,471" Source="/TzokerLogo.jpg"/>
+
+                    <TextBlock HorizontalAlignment="Left" Margin="10,146,0,124" TextWrapping="Wrap" Text="Το τζόκερ είναι ένα παιχνίδι λοταρίας του ΟΠΑΠ.  Συνολικά θα κληρωθούν 5 αριθμοί από τους 45, που βρίσκονται μέσα στην κληρωτίδα, του βασικού κορμού του κουπονιού  και 1 αριθμός Τζόκερ από τους 20 που βρίσκονται μέσα στην κληρωτίδα.  Ο παίκτης ή οι παίκτες που θα κάνουν την απόλυτη πρόβλεψη των κληρωθέντων αριθμών θα μοιραστούν τα κέρδη της πρώτης (Ι) κατηγορίας κερδών." Width="436" TextAlignment="Center" FontSize="22"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,458,0,10" TextWrapping="Wrap" Text="Η ελάχιστη επιλογή είναι μία στήλη (απλή στήλη), επιλέγοντας  πέντε (5) αριθμούς στο πρώτο πεδίο των σαράντα πέντε (45) αριθμών και έναν (1) από το δεύτερο πεδίο των 20 αριθμών." Width="436" TextAlignment="Center" FontSize="20" FontStyle="Italic"/>
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Pivot item two-->
+            <phone:PivotItem Header="Κέρδη">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,404" TextWrapping="Wrap" Text="Υπάρχουν οκτώ (8) κατηγορίες επιτυχιών. Κάθε συμμετέχουσα στήλη που περιλαμβάνει 5+1 αριθμούς και φέρει επιτυχία, κατατάσσεται σε μία μόνο κατηγορία ανάλογα με τις σωστές προβλέψεις που περιλαμβάνει:" Width="436" TextAlignment="Center" FontSize="22"/>
+                    <TextBlock Text="1η κατηγορία (5+1)" Margin="112,220,10,342" FontSize="26"/>
+                    <TextBlock Text="2η κατηγορία (5)" Margin="112,266,10,296" FontSize="26"/>
+                    <TextBlock Text="3η κατηγορία (4+1)" Margin="112,312,10,250" FontSize="26"/>
+                    <TextBlock Text="4η κατηγορία (4)" Margin="112,358,10,204" FontSize="26"/>
+                    <TextBlock Text="5η κατηγορία (3+1)" Margin="112,404,10,158" FontSize="26"/>
+                    <TextBlock Text="6η κατηγορία (3)" Margin="112,450,10,112" FontSize="26"/>
+                    <TextBlock Text="7η κατηγορία (2+1)" Margin="112,491,10,71" FontSize="26"/>
+                    <TextBlock Text="8η κατηγορία (1+1)" Margin="112,537,10,25" FontSize="26"/>
+                </Grid>
+
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="Τζόκερ Statistics">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,97" TextWrapping="Wrap" Text="Το Tzoker statistics είναι μια εφαρμογή που προσφέρει στατιστικά στοιχεία για το δημοφιλές παιχνίδι του ΟΠΑΠ Τζόκερ.  Η λήψη των δεδομένων των κληρώσεων πραγματοποιείται απο τον επίσημο πάροχο του ΟΠΑΠ http://www.opap.gr/web/guest/web-services. Η εφαρμογή σε καμία περίπτωση δεν εγγυάται σίγουρα κέρδη και δεν προβλέπει με ακρίβεια αποτελέσματα μελλοντικών κληρώσεων. H AVC IT δεν φέρει καμία ευθύνη για την εγκυρότητα των στοιχείων των κληρώσεων. Παίξτε υπεύθυνα" Width="436" TextAlignment="Center" FontSize="25"/>
+                    <Image HorizontalAlignment="Left" Height="39" Margin="316,554,0,0" VerticalAlignment="Top" Width="130" Source="/Resources/Images/Avcitlogo.png" Stretch="Fill"/>
+
+                </Grid>
+            </phone:PivotItem>
+        </phone:Pivot>
+    </Grid>
+
+</phone:PhoneApplicationPage>
